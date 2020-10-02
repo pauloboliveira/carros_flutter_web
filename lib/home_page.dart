@@ -63,6 +63,7 @@ class _HomePageState extends State<HomePage> {
 
   _right() {
     return Container(
+      padding: const EdgeInsets.all(16),
       width: showMenu ? size.width - menuWidth : size.width,
       child: Body(),
     );
