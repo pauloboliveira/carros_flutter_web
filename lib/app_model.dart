@@ -1,19 +1,25 @@
-import 'package:carros_flutter_web/pages/default_page%20copy.dart';
+import 'package:carros_flutter_web/pages/default_page.dart';
 import 'package:flutter/cupertino.dart';
 
 class AppModel extends ChangeNotifier {
 
-  Widget page;
+  List<Widget> pages = [];
 
   String nome;
 
   AppModel(){
-    page = DefaultPage();
+    pages.add(DefaultPage());
     nome = "Paulo";
   }
 
-  setPage(Widget page){
-    this.page = page;
+  push(Widget page){
+    this.pages.add(page);
+
+    notifyListeners();
+  }
+
+  removeLast(){
+    this.pages.removeLast();
 
     notifyListeners();
   }
